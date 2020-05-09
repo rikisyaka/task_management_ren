@@ -298,5 +298,13 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
   
     # mail setting
-  config.mailer_sender = "メールアドレス"
+  config.mailer_sender = "abc@mail.com"
+  
+  # lock sessings
+  config.unlock_strategy = :email
+  config.maximum_attempts = 5
+  
+  # timeout setting
+  config.timeout_in = 30.minutes
+  
 end

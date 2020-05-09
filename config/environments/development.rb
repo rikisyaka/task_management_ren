@@ -31,21 +31,28 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   
-  # default url  
-  config.action_mailer.default_url_options = { host: 'localhost', port: 8080 }
+  # # default url  
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
+  # # mail setting
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # host = 'website.com'
+  # config.action_mailer.default_url_options = { host: host }
+  # config.action_mailer.delivery_method = :smtp
+  
+  
+  # default url
+  config.action_mailer.default_url_options = { protocol: 'https',  host: 'https://a8f74d89589842719856396e0b858de5.vfs.cloud9.us-east-1.amazonaws.com/' }
   # mail setting
-  config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  host = 'website.com'
-  config.action_mailer.default_url_options = { host: host }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => '<アドレス@gmail.com>',
-    :password =>  '<cwziyelmiqwcrnpz>',
+    :user_name => '@gmail.com',
+    :password =>  'cwziyelmiqwcrnpz',
     :enable_starttls_auto => true,
     :authentication => 'login'
   

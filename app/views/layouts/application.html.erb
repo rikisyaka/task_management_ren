@@ -9,18 +9,30 @@
     </head>
 
     <body>
-        <header>
+     
             <nav>
-                <% if user_signed_in? %>
-                <strong><%= link_to current_user.username, pages_show_path %></strong>
-                <%= link_to 'プロフィール変更', edit_user_registration_path %>
-                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+        <header class="header">
+        <nav class="nav">
+        <ul class="header_menu">
+          <% if user_signed_in? %>    
+          <strong><%= link_to current_user.username, pages_show_path %></strong>
+          <li class="header_menu_title"><%= link_to "kanban", root_path, class: "nav-link" %></li>
+          <li>
+            <ul class="header_menu_inner">
+            
+                <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+                <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             <% else %>
-                <%= link_to 'サインアップ', new_user_registration_path %>
-                <%= link_to 'ログイン', new_user_session_path %>
+                <li><%= link_to 'サインアップ ', new_user_registration_path %></li>
+                <li><%= link_to 'ログイン', new_user_session_path %></li>
                 <% end %>
-            </nav>
-        </header>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
 
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
